@@ -28,3 +28,4 @@ jobs:
     - run: aws ec2 describe-instances
     
     - run: terraform version
+    - run: terraform fmt -recursive -check
