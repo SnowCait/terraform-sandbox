@@ -9,7 +9,7 @@ terraform {
 
 provider "aws" {}
 
-resource "aws_instance" "example" {
+resource "aws_instance" "github-actions" {
   count = 0
 
   ami           = "ami-02b658ac34935766f"
