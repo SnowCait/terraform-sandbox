@@ -5,6 +5,7 @@ on:
       paths:
         - ec2.tf
         - provider.tf
+        - .github/workflows/aws.yml
 
 name: AWS
 
@@ -25,3 +26,5 @@ jobs:
         aws-region: ap-northeast-1
 
     - run: aws ec2 describe-instances
+    
+    - run: terraform version
