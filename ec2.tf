@@ -2,15 +2,12 @@ terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
-      version = "~> 2.70"
+      version = "~> 3.0"
     }
   }
 }
 
-provider "aws" {
-  profile = "default"
-  region  = "ap-northeast-1"
-}
+provider "aws" {}
 
 resource "aws_instance" "example" {
   ami           = "ami-830c94e3"
