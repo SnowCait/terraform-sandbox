@@ -29,3 +29,7 @@ jobs:
     
     - run: terraform version
     - run: terraform fmt -recursive -check
+    - run: |
+          terraform init
+          terraform validate
+          terraform plan
