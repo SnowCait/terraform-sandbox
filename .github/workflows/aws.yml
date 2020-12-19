@@ -47,3 +47,16 @@ jobs:
       - run: terraform plan
       - run: terraform apply -auto-approve
       - run: git status
+      - name: Count changes
+        id: tfstate
+        run: |
+          git add -N . # 新規ファイルを含める
+          echo "::set-output name=count::$(git diff --name-only | wc -l)"
+      - name: commit & push
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "terraform init"
+          git push
+        if: steps.tfstate.outputs.count > 0
