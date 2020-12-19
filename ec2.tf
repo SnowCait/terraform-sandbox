@@ -9,8 +9,12 @@ terraform {
 
 provider "aws" {
   profile = "default"
-  region  = "us-west-2"
+  region  = "ap-northeast-1"
 }
+# provider "aws" {
+#   version = ">= 2.0"
+#   region  = "ap-northeast-1"
+# }
 
 resource "aws_instance" "example" {
   count         = 0
