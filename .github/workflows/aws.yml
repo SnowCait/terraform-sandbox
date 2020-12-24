@@ -3,8 +3,8 @@ name: AWS
 on:
     push:
       paths:
-        - ec2.tf
-        - .github/workflows/aws.yml
+        - '**.tf'
+        - '.github/workflows/aws.yml'
 
 jobs:
   deploy:
