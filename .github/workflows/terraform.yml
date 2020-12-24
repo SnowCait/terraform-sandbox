@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - '**.tf'
-      - '.github/workflows/aws.yml'
+      - '.github/workflows/terraform.yml'
 
 jobs:
   deploy:
