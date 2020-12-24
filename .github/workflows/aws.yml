@@ -1,13 +1,10 @@
+name: AWS
+
 on:
-    workflow_dispatch:
     push:
-    pull_request:
       paths:
         - ec2.tf
-        - provider.tf
         - .github/workflows/aws.yml
-
-name: AWS
 
 jobs:
   deploy:
