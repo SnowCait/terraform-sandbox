@@ -22,10 +22,10 @@ jobs:
 
       - run: terraform version
 
-#       - name: git clone
-#         uses: actions/checkout@v2
+      - name: git clone
+        uses: actions/checkout@v2
 
-#       - run: terraform fmt -recursive
+      - run: terraform fmt -recursive
 #       - name: Count changes
 #         id: format
 #         run: |
@@ -39,7 +39,7 @@ jobs:
 #           git commit -m "terraform fmt"
 #           git push
 #         if: steps.format.outputs.count > 0
-#       - run: terraform init
+      - run: terraform init
 #       - name: Count changes
 #         id: init
 #         run: |
