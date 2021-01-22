@@ -21,3 +21,7 @@ resource "aws_instance" "jenkins" {
     Name = "Jenkins"
   }
 }
+
+output "dns" {
+  value = aws_instance.jenkins.public_dns
+}
