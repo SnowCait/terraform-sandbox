@@ -7,15 +7,17 @@ terraform {
   }
 }
 
-provider "aws" {}
+provider "aws" {
+  profile = "sandbox"
+  region  = "ap-northeast-1"
+}
 
 resource "aws_instance" "jenkins" {
-  count = 0
-
-  ami           = "ami-0b313cea00b6ad211"
-  instance_type = "t2.micro"
+  ami                    = "ami-0b313cea00b6ad211"
+  instance_type          = "t2.micro"
+  vpc_security_group_ids = ["sg-0ff16fb5a5284eed7"]
 
   tags = {
-    Name = "Jenkins ${count.index}"
+    Name = "Jenkins"
   }
 }
