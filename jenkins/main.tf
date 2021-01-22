@@ -1,4 +1,11 @@
 terraform {
+  backend "s3" {
+    bucket  = "snow-terraform-jenkins"
+    key     = "jenkins/terraform.tfstate"
+    profile = "sandbox"
+    region  = "ap-northeast-1"
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
